@@ -8,4 +8,4 @@ def main():
 
 
 if __name__ == '__main__':
-    echo_app.run(debug=True)
+    echo_app.run()
