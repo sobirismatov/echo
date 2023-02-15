@@ -3,7 +3,7 @@ from telegram import Bot
 import os
 echo_app = Flask(__name__)
 
-TOKEN=os.environ(token=TOKEN)
+TOKEN=os.environ["TOKEN"]
 bot=Bot(TOKEN)
 
 @echo_app.route('/', methods=['POST', 'GET'])
