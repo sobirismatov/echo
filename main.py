@@ -13,6 +13,3 @@ def main():
         print(chat_id, text)
 
         return 'hello'
-
-if __name__ == '__main__':
-    echo_app.run(debug=True)
