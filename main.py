@@ -10,8 +10,8 @@ def main():
         
     elif request.method == 'POST':
         data = request.get_json(force=True)
-        chat_id=data["massage"]["from"]["id"]
-        text=data["massage"]["text"]
+        chat_id=data["message"]["from"]["id"]
+        text=data["message"]["text"]
         print(chat_id, text)
 
         return 'hello'
