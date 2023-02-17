@@ -5,7 +5,8 @@ import os
 
 from main import (
     start,
-    echo
+    dog,
+    cat
 )
 
 app = Flask(__name__)
@@ -28,7 +29,9 @@ def main():
         dp: Dispatcher = Dispatcher(bot, None, workers=0)  # dispatcher   
         
         dp.add_handler(CommandHandler('start', start))
-        dp.add_handler(MessageHandler(Filters.text, echo))
+        dp.add_handler(MessageHandler(Filters.text("dog"), dog))
+        dp.add_handler(MessageHandler(Filters.text("cat"), cat))
+        
 
         dp.process_update(update) # process update
         return 'hello'

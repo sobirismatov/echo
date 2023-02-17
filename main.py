@@ -1,11 +1,20 @@
-from telegram import Update
+from telegram import Update ,ReplyKeyboardMarkup,keyboardbutton
 from telegram.ext import CallbackContext, Updater
+import requests
 
 
 def start(update: Update, context: CallbackContext):
-    update.message.reply_text('Welcome to our bot!')
+    keyboard =[
+        ["dog", "cat"]
+        ]
+    update.message.reply_text("welcome to bot",reply_markup=ReplyKeyboardMarkup(keyboard=keyboard, resize_keyboard=True))
+    
+def dog(update:Update,context:CallbackContext):
+    response=requests.get("https://random.dog/woof.json")
+    url=response.json()["url"]
+    update.message.reply_photo(url)
 
-
-def echo(update: Update, context: CallbackContext):
-    text = update.message.text
-    update.message.reply_text(text)
+def cat(update:Update,context:CallbackContext):
+    response=requests.get("https://aws.random.cat/meow")
+    url=response.json()["file"]
+    update.message.reply_photo(url)
