@@ -18,3 +18,5 @@ def cat(update:Update,context:CallbackContext):
     response=requests.get("https://aws.random.cat/meow")
     url=response.json()["file"]
     update.message.reply_photo(url)
+def pic(update: Update, context: CallbackContext):
+    update.message.reply_text("Buttonlarning birini bosing!")
