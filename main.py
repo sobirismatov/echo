@@ -19,4 +19,7 @@ def cat(update:Update,context:CallbackContext):
     url=response.json()["file"]
     update.message.reply_photo(url)
 def pic(update: Update, context: CallbackContext):
-    update.message.reply_text("Buttonlarning birini bosing!")
+    keyboard =[
+        ["dog", "cat"]
+        ]
+    update.message.reply_text("Buttonlarning birini bosing!",reply_markup=ReplyKeyboardMarkup(keyboard=keyboard, resize_keyboard=True))
